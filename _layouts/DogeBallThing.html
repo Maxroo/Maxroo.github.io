@@ -1,56 +1,15 @@
-<body style="background-color:#eaece5"></body>
-    <style>
-    .fas{
-      color: rgb(0, 0, 0)
-    }
 
-    .fas:hover{
-      color: rgb(255, 0, 0)
-    }
-    </style>
-<div class="user-details">
-  <h1>Personal Project: DodgeBall</h1>
-</div>
-  <div class="user">
-    <div class="tech">
-      <div class="videoWrapper">
-        <iframe width="420" height="315" src="https://youtu.be/PAx6F8y2sC0" frameborder="0"
-          allow="accelerometer;  encrypted-media; gyroscope; " allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
-  <div class="user">
-    <div class="tech">
-      <p style="text-align: left"><a href="../index.html">Back</a></p>
-    </div>
-    <div class="tech">
-    </div>
-    <div class="tech">
-    </div>
-  </div>
-
-
-
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    .videoWrapper {
-      position: relative;
-      padding-bottom: 56.25%;
-      /* 16:9 */
-      padding-top: 25px;
-      padding-left: 10px;
-      padding-right: 10px;
-      height: 0;
-    }
-
-    .videoWrapper iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-  </style>
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/konpa/devicon@df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+<html lang="en">
+  {% include head.html %}
+  <body>
+      {% include header.html %}
+    
+      <section id="about">
+        {% include DogeBallThing.html %}
+      </section>
+        {{ content }}
+      {% include footer.html %}
+  </body>
+</html>
