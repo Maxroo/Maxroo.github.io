@@ -7,7 +7,7 @@ description: My portfolio website
 # User settings
 username: Hao-Tse Wu
 user_description:  
-user_title: Game Programmer
+user_title: Software Engineer 
 email: maxwuhz@gmail.com
 
 exclude: ['package.json', 'src' , 'node_modules']
