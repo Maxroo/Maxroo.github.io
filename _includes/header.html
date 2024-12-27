@@ -7,14 +7,21 @@
 
         .header-links {
           display: flex; /* Use Flexbox to align items in a row */
-          justify-content: flex-start; /* Align to the left (optional, can be customized) */
-          gap: 20px; /* Space between the links */
-          margin: 10px;
+          flex-direction: row; /* Stack titles vertically */
+          align-items: flex-start; /* Align titles to the left */
+        }
+
+      .links {
+        display: flex; /* Align links in a single row */
+        gap: 20px; /* Adjust spacing between links */
+        margin: 10px 0 0 0; 
+        /* add space between two horizontal links */
+        
       }
 
       .fab{
         color: rgb(255, 255, 255);
-        padding: 15px 20px;
+        padding: 15px 10px;
         border-radius: 100px;
         display: inline-flex; /* Use Flexbox for the link */
         align-items: center; /* Vertically center icon and text */
@@ -89,7 +96,6 @@
 
       <div class="header-links">
         <a class="link" href="../game_project.html#about" >Game Projects</a>
-        <div class="navbar">
           <div class="dropdown">
             <a class="link" href="../other_projects.html#about">My Projects</a>
             <div class="dropdown-content">
@@ -99,7 +105,6 @@
                 <a href="../other_projects.html#ray_tracer">Ray Tracer</a>
                 <a href="../other_projects.html#lp_solver">Linear Program Solver</a>
             </div>
-          </div> 
       </div>
       </div>
 
