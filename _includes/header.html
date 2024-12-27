@@ -6,13 +6,12 @@
       <style>
 
         .header-links {
-          display: flex; /* Use Flexbox to align items in a row */
+          display: inline-flex; /* Use Flexbox for the link *//* Use Flexbox to align items in a row */
           flex-direction: row; /* Stack titles vertically */
           align-items: flex-start; /* Align titles to the left */
         }
 
       .links {
-        display: flex; /* Align links in a single row */
         gap: 20px; /* Adjust spacing between links */
         margin: 10px 0 0 0; 
         /* add space between two horizontal links */
@@ -56,6 +55,7 @@
         min-width: 200px;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         z-index: 1;
+        text-decoration: none;
       }
 
       /* Links inside the dropdown */
@@ -68,7 +68,7 @@
       }
 
       /* Change color of dropdown links on hover */
-      .dropdown-content a:hover {background-color: #ddd;}
+      .dropdown-content a:hover {background-color: #ddd; text-decoration: none;}
 
       /* Show the dropdown menu on hover */
       .dropdown:hover .dropdown-content {display: block;}
