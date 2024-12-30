@@ -95,6 +95,9 @@
               </div>
         </div>
 
+<a class="fixed-button" href="../other_projects.html#section3" data-scroll><i class="icon fa fa-chevron-right" aria-hidden="true"></i></a>
+
+
 <style>
   * {
     box-sizing: border-box;
@@ -170,6 +173,25 @@
     p{
       font-size: medium;
       font-weight: bold;
+    }
+
+    .fixed-button {
+      position: fixed;   /* Keep the button fixed on the screen */
+      right: 20px;        /* Position it 20px from the left side of the screen */
+      top: 50%;          /* Position it in the middle vertically */
+      transform: translateY(-50%); /* Adjust for perfect vertical centering */
+      padding: 10px 20px;
+      background-color: #000000; /* Blue background */
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      z-index: 1000; /* Ensure it's above other content */
+    }
+    
+    .fixed-button:hover {
+      background-color: #0056b3; /* Darker blue when hovered */
     }
 </style>
 
