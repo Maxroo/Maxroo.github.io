@@ -24,17 +24,19 @@
   }
 
   .project-card-sub {
-    background: white;
+    background: var(--card-bg);
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     flex-direction: column;
+    border: 1px solid rgba(255,255,255,0.05);
   }
 
   .project-card-sub:hover {
     transform: translateY(-5px);
+    box-shadow: var(--card-hover-shadow);
   }
 
   .media-grid {
@@ -72,6 +74,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: var(--text-primary);
   }
 
   .github-link {
@@ -92,45 +95,21 @@
 </style>
 
 <div class="project-section" id="section3">
-  <h1 class="section-title">Study Projects</h1>
+  <h1 class="section-title">Technical Research & Studies</h1>
   <div class="project-grid">
 
-    <!-- Frozen Lake -->
-    <div class="project-card-sub" id="Frozen_Lake">
-      <div class="media-grid">
-        <div class="media-item"><img src="{{ '/rl_frozen/before.gif' | relative_url }}" alt="Before Training"></div>
-        <div class="media-item"><img src="{{ '/rl_frozen/after.gif' | relative_url }}" alt="After Training"></div>
-      </div>
-      <div class="project-info">
+    <!-- Multimodal RAG -->
+    <div class="project-card-sub" id="Multimodal_RAG">
+      <div class="project-info" style="min-height: 180px; display: flex; flex-direction: column; justify-content: center; background: linear-gradient(135deg, rgba(10, 132, 255, 0.1) 0%, rgba(0, 0, 0, 0) 100%);">
         <h2>
-          Reinforcement Learning: Frozen Lake
-          <a href="https://github.com/Maxroo/Reinforcement_Learning_Frozen_Lake" target="_blank" class="github-link"><i class="fab fa-github"></i></a>
-        </h2>
-        <p>Training an agent to navigate a slippery frozen lake using Q-Learning.</p>
-      </div>
-    </div>
-
-    <!-- Arduino -->
-    <div class="project-card-sub" id="Arduino">
-      <div class="media-item" style="padding-top: 50%;"><img src="{{ '/arduino/arduino.gif' | relative_url }}" alt="Arduino Simulation"></div>
-      <div class="project-info">
-        <h2>Arduino LED Systems</h2>
-        <p>Embedded systems design and simulation for interactive LED arrays.</p>
-      </div>
-    </div>
-
-    <!-- RAG -->
-    <div class="project-card-sub" id="RAG">
-      <div class="project-info" style="min-height: 200px; display: flex; flex-direction: column; justify-content: center;">
-        <h2>
-          RAG for Complex Claims
+          Retrieval-Augmented Generation for Complex Claims
           <a href="https://github.com/Maxroo/RAG" target="_blank" class="github-link"><i class="fab fa-github"></i></a>
         </h2>
-        <p>Retrieval-Augmented Generation system designed to verify and process complex informational claims.</p>
+        <p>Built a Retrieval-Augmented Generation system that processes and retrieves information from a mixture of text and visual data using vector embeddings.</p>
       </div>
     </div>
 
-    <!-- Ray Tracer -->
+    <!-- Ray Tracer (Custom) -->
     <div class="project-card-sub" id="ray_tracer">
       <div class="media-grid">
         <div class="media-item"><img src="{{ '/RayTracer/input.PNG' | relative_url }}" alt="Input"></div>
@@ -138,10 +117,10 @@
       </div>
       <div class="project-info">
         <h2>
-          Ray Tracer
+          Custom Ray Tracer (C++)
           <a href="https://github.com/Maxroo/RayTracer" target="_blank" class="github-link"><i class="fab fa-github"></i></a>
         </h2>
-        <p>A custom graphics engine built from scratch to simulate light transport and photorealistic effects.</p>
+        <p>A ground-up graphics engine simulating photorealistic light transport, shadows, and reflection models.</p>
       </div>
     </div>
 
@@ -156,7 +135,37 @@
           Linear Program Solver
           <a href="https://github.com/Maxroo/lp_solver" target="_blank" class="github-link"><i class="fab fa-github"></i></a>
         </h2>
-        <p>An algebraic solver that determines feasibility, boundedness, and optimal solutions for linear programs.</p>
+        <p>Algebraic solver for linear optimization using the Simplex method to find optimal solutions.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <h1 class="section-title" style="margin-top: 60px;">Learning Projects</h1>
+  <p style="margin-bottom: 20px; color: var(--text-secondary); font-size: 0.95rem;">Built by following step-by-step guides to master foundational concepts.</p>
+  <div class="project-grid">
+
+    <!-- Frozen Lake -->
+    <div class="project-card-sub" id="Frozen_Lake">
+      <div class="media-grid">
+        <div class="media-item"><img src="{{ '/rl_frozen/before.gif' | relative_url }}" alt="Before Training"></div>
+        <div class="media-item"><img src="{{ '/rl_frozen/after.gif' | relative_url }}" alt="After Training"></div>
+      </div>
+      <div class="project-info">
+        <h2>
+          RL: Frozen Lake (Q-Learning)
+          <a href="https://github.com/Maxroo/Reinforcement_Learning_Frozen_Lake" target="_blank" class="github-link"><i class="fab fa-github"></i></a>
+        </h2>
+        <p>Training autonomous agents to solve Markov Decision Processes in stochastic environments.</p>
+      </div>
+    </div>
+
+    <!-- Arduino -->
+    <div class="project-card-sub" id="Arduino">
+      <div class="media-item" style="padding-top: 50%;"><img src="{{ '/arduino/arduino.gif' | relative_url }}" alt="Arduino Simulation"></div>
+      <div class="project-info">
+        <h2>Arduino LED Systems</h2>
+        <p>Embedded systems design for interactive LED arrays and hardware-level programming.</p>
       </div>
     </div>
 

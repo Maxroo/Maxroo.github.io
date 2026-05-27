@@ -6,10 +6,10 @@
   }
 
   .about-hero {
-    background: white;
+    background: var(--card-bg);
     padding: 40px;
     border-radius: 28px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    box-shadow: var(--card-shadow);
     margin-bottom: 40px;
   }
 
@@ -18,6 +18,7 @@
     font-weight: 800;
     margin-bottom: 20px;
     letter-spacing: -0.04em;
+    color: var(--text-primary);
   }
 
   .experience-grid {
@@ -27,10 +28,10 @@
   }
 
   .exp-card {
-    background: white;
+    background: var(--card-bg);
     padding: 30px;
     border-radius: 24px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    box-shadow: var(--card-shadow);
     border-left: 5px solid var(--accent);
   }
 
@@ -44,6 +45,7 @@
   .exp-title {
     font-size: 1.4rem;
     font-weight: 700;
+    color: var(--text-primary);
   }
 
   .exp-company {
@@ -67,86 +69,100 @@
     color: var(--text-primary);
   }
 
-  .resume-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: var(--text-primary);
-    color: white;
-    padding: 12px 24px;
+  .highlight-tag {
+    display: inline-block;
+    background: rgba(10, 132, 255, 0.1);
+    color: var(--accent);
+    padding: 4px 12px;
     border-radius: 100px;
-    text-decoration: none;
+    font-size: 0.8rem;
     font-weight: 600;
-    transition: background 0.2s;
-  }
-
-  .resume-btn:hover {
-    background: var(--accent);
-    color: white;
-    text-decoration: none;
+    margin-bottom: 10px;
   }
 </style>
 
 <div class="about-section">
   <div class="about-hero">
-    <h1>Good Day! I'm Hao-Tse.</h1>
-    <p style="font-size: 1.1rem; line-height: 1.6; color: var(--text-secondary); margin-bottom: 20px;">
-      I'm a passionate Software Engineer focused on building robust systems and immersive 3D experiences. 
-      Eager to learn and always looking for new challenges in graphics, games, and systems programming.
+    <h1>Hao-Tse (Max) Wu</h1>
+    <p style="font-size: 1.1rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: 20px;">
+      I am a Software Engineer and current thesis-based **Master of Science student in Computer Science at the University of Victoria**, where I also completed my Honours Bachelor of Computer Science. 
+      My academic and applied research focuses heavily on **machine learning, data analysis, large-scale data processing, and generative diffusion models**. 
+      I have a strong foundation in building scalable data pipelines, developing deep learning architectures (such as PyTorch-based diffusion models and lightweight Temporal Convolutional Networks), 
+      and implementing explainable AI techniques. My technical versatility spans across robust backend engineering, high-performance computing, and cross-platform tool development.
     </p>
-    <a href="https://drive.google.com/file/d/1dvrw0dZ3eOkBrUjPKUlOszYp9pZAx891/view?usp=sharing" target="_blank" class="resume-btn">
-      <i class="fas fa-download"></i> Download Resume
-    </a>
   </div>
 
   <h2 class="section-label-sub">Professional Experience</h2>
   <div class="experience-grid">
+    <!-- Kabam -->
     <div class="exp-card">
       <div class="exp-header">
-        <div class="exp-title">Cinematic Designer</div>
+        <div class="exp-title">Backend Software Engineer CO-OP</div>
       </div>
-      <div class="exp-company">I Got Games (IGG) Canada</div>
+      <div class="exp-company">Kabam | Vancouver, BC, Canada</div>
+      <div class="highlight-tag">May 2023 – Dec 2023</div>
       <div class="exp-content">
-        <p>• Design and develop whitebox in-game user acquisition content in Unity.</p>
-        <p>• Create C# scripts to improve cinematic presentation and behaviors.</p>
-        <p>• Collaborate with artists and programmers to implement 3D models and develop internal tools.</p>
+        <p>• **System Monitoring & Performance Tuning:** Utilized New Relic observability pipelines to actively monitor backend microservices, pinpointing critical latency hotspots to enable targeted performance tuning for high-traffic endpoints.</p>
+        <p>• **Data Consistency & Debugging:** Resolved complex data consistency failures within the inventory system by debugging asynchronous request/response lifecycles, successfully restoring 100% reliability for in-game store transactions.</p>
+        <p>• **Tooling & Workflow Optimization:** Engineered internal cross-platform debugging tools using Node.js and C#, which reduced issue reproduction time and streamlined workflows for both QA and Engineering teams.</p>
+        <p>• **Defect Resolution:** Diagnosed and patched frontend/backend integration defects, significantly reducing production regressions and minimizing user-facing support tickets.</p>
       </div>
     </div>
   </div>
 
-  <h2 class="section-label-sub">Game Development Highlights</h2>
-  <div class="experience-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+  <div class="experience-grid">
+    <!-- Cinematic Designer -->
     <div class="exp-card" style="border-left-color: #6366f1;">
-      <div class="exp-title">Swift Striker (C#)</div>
-      <div class="exp-company">VFS Project | Unity</div>
+      <div class="exp-header">
+        <div class="exp-title">Cinematic Designer</div>
+      </div>
+      <div class="exp-company">I Got Games (IGG) Canada</div>
+      <div class="highlight-tag">Jan 2023 – Apr 2023</div>
       <div class="exp-content">
-        <p>Implemented core player movement, hitting mechanics, and screen-to-screen navigation.</p>
+        <p>• Designed and develop whitebox in-game user acquisition content in Unity.</p>
+        <p>• Created C# scripts to improve cinematic presentation and behaviors.</p>
+        <p>• Collaborated with artists and programmers to implement 3D models and develop internal tools.</p>
       </div>
     </div>
+  </div>
+
+• Collaborate with artists and programmers to implement 3D models and develop internal tools.
+
+  <h2 class="section-label-sub">Education</h2>
+  <div class="experience-grid">
+    <!-- MSc UVic -->
     <div class="exp-card" style="border-left-color: #f59e0b;">
-      <div class="exp-title">Fracture (C++/BP)</div>
-      <div class="exp-company">VFS Project | Unreal Engine</div>
+      <div class="exp-header">
+        <div class="exp-title">Thesis-based MSc, Computer Science</div>
+      </div>
+      <div class="exp-company">University of Victoria | Victoria, BC, Canada</div>
+      <div class="highlight-tag">Sep 2025 – Sep 2027 (Expected)</div>
       <div class="exp-content">
-        <p>Developed networked UI, LAN master client logic, and complex character abilities (leaping, dashing).</p>
+        <p>My research focuses on **Mobility Analysis, Data Analysis, Generative Diffusion Models, Large-Scale Data Processing, and Deep Learning**.</p>
       </div>
     </div>
+
+    <!-- BSc UVic -->
     <div class="exp-card" style="border-left-color: #10b981;">
-      <div class="exp-title">Personal Project: Pokemon</div>
-      <div class="exp-company">Unity</div>
+      <div class="exp-header">
+        <div class="exp-title">Honours Bachelor of Computer Science</div>
+      </div>
+      <div class="exp-company">University of Victoria | Victoria, BC, Canada</div>
+      <div class="highlight-tag">Sep 2021 – April 2024 (Dean's List)</div>
       <div class="exp-content">
-        <p>Built a full RPG battle system including wild encounters, NPC logic, and interactive world objects.</p>
+        <p>I completed my Honours degree with key coursework in **Computer Graphics, Computer Architecture, Numerical Analysis, Linear Algebra, Operations Research (Linear Programming), and Database Systems**.</p>
       </div>
     </div>
   </div>
 
   <h2 class="section-label-sub">Hobbies & Interests</h2>
   <div class="experience-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
-    <div class="exp-card" style="padding: 20px; border-left: none; background: #f9f9fb; text-align: center;">
+    <div class="exp-card" style="padding: 20px; border-left: none; background: var(--card-bg); text-align: center;">
       <i class="fas fa-gamepad" style="font-size: 1.5rem; margin-bottom: 10px; color: var(--accent);"></i>
       <div class="exp-title" style="font-size: 1.1rem;">Strategy & FPS</div>
       <p style="font-size: 0.85rem;">Dota 2 | APEX</p>
     </div>
-    <div class="exp-card" style="padding: 20px; border-left: none; background: #f9f9fb; text-align: center;">
+    <div class="exp-card" style="padding: 20px; border-left: none; background: var(--card-bg); text-align: center;">
       <i class="fas fa-futbol" style="font-size: 1.5rem; margin-bottom: 10px; color: var(--accent);"></i>
       <div class="exp-title" style="font-size: 1.1rem;">Sports</div>
       <p style="font-size: 0.85rem;">Soccer | Ultimate Frisbee</p>

@@ -3,6 +3,31 @@ layout: default
 ---
 
 <style>
+    /* Default Dark Mode Variables */
+    :root {
+        --bg-color: #000000;
+        --card-bg: #1c1c1e;
+        --text-primary: #ffffff;
+        --text-secondary: #a1a1a6;
+        --accent: #0a84ff;
+        --card-shadow: 0 4px 16px rgba(0,0,0,0.4);
+        --card-hover-shadow: 0 8px 32px rgba(0,0,0,0.6);
+        --border-radius: 28px;
+        --hero-gradient: linear-gradient(135deg, #1c1c1e 0%, #2c2c2e 100%);
+    }
+
+    /* Light Mode Variables override */
+    [data-theme="light"] {
+        --bg-color: #f2f2f7;
+        --card-bg: #ffffff;
+        --text-primary: #1d1d1f;
+        --text-secondary: #86868b;
+        --accent: #0071e3;
+        --card-shadow: 0 2px 12px rgba(0,0,0,0.04);
+        --card-hover-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        --hero-gradient: linear-gradient(135deg, #ffffff 0%, #f9f9fb 100%);
+    }
+
     .bento-container {
         max-width: 1200px;
         margin: 40px auto;
@@ -26,10 +51,10 @@ layout: default
     }
 
     .card {
-        background: var(--card-bg, #ffffff);
-        border-radius: var(--border-radius, 28px);
+        background: var(--card-bg);
+        border-radius: var(--border-radius);
         padding: 30px;
-        box-shadow: var(--card-shadow, 0 2px 12px rgba(0,0,0,0.04));
+        box-shadow: var(--card-shadow);
         transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         position: relative;
         overflow: hidden;
@@ -41,7 +66,7 @@ layout: default
 
     .card:hover {
         transform: translateY(-6px);
-        box-shadow: var(--card-hover-shadow, 0 8px 24px rgba(0,0,0,0.08));
+        box-shadow: var(--card-hover-shadow);
         text-decoration: none;
         color: inherit;
     }
@@ -49,7 +74,7 @@ layout: default
     .hero-card {
         grid-column: span 3;
         grid-row: span 2;
-        background: linear-gradient(135deg, #ffffff 0%, #f9f9fb 100%);
+        background: var(--hero-gradient);
         justify-content: center;
     }
 
@@ -59,16 +84,16 @@ layout: default
         line-height: 1.1;
         letter-spacing: -0.04em;
         margin-bottom: 12px;
-        color: var(--text-primary, #1d1d1f);
+        color: var(--text-primary);
     }
 
     .hero-title span {
-        color: var(--accent, #0071e3);
+        color: var(--accent);
     }
 
     .hero-subtitle {
         font-size: 1.4rem;
-        color: var(--text-secondary, #86868b);
+        color: var(--text-secondary);
         font-weight: 400;
         margin: 0;
     }
@@ -76,13 +101,13 @@ layout: default
     .about-card {
         grid-column: span 1;
         grid-row: span 2;
-        background: var(--text-primary, #1d1d1f);
-        color: white;
+        background: var(--text-primary);
+        color: var(--bg-color); /* Invert text color for this card */
         justify-content: flex-end;
     }
 
-    .about-card .card-title { color: white; }
-    .about-card .card-desc { color: rgba(255,255,255,0.7); }
+    .about-card .card-title { color: var(--bg-color); }
+    .about-card .card-desc { color: var(--bg-color); opacity: 0.8; }
 
     .project-card {
         grid-column: span 2;
@@ -121,7 +146,7 @@ layout: default
 
     .card-desc {
         font-size: 1rem;
-        color: var(--text-secondary, #86868b);
+        color: var(--text-secondary);
         line-height: 1.5;
         margin: 0;
     }
@@ -139,11 +164,12 @@ layout: default
     }
 
     .tag {
-        background: rgba(255,255,255,0.2);
+        background: rgba(255,255,255,0.1);
         padding: 5px 12px;
         border-radius: 100px;
         font-size: 0.75rem;
         font-weight: 600;
+        color: #fff;
     }
 
     /* Hide the top nav on home page since bento is the hero */
@@ -170,15 +196,16 @@ layout: default
     <!-- SECTION: INTRODUCTION -->
     <div class="hero-card card">
         <h1 class="hero-title">{{ site.username | replace: " Wu", "" }} <span>Wu</span></h1>
-        <p class="hero-subtitle">{{ site.user_title }} & Graphics Enthusiast</p>
+        <p class="hero-subtitle">Software Engineer & MSc Student at UVic</p>
         <p class="card-desc" style="margin-top: 24px; max-width: 80%;">
-            Specializing in building robust systems, interactive 3D environments, and intelligent agents.
+            I specialized in data analysis, machine learning
+            data processing, and generative models.
         </p>
     </div>
 
     <a href="{{ '/aboutMe.html' | relative_url }}" class="about-card card">
         <i class="fas fa-arrow-right icon-box" style="font-size: 1.5rem; margin-bottom: auto; align-self: flex-end;"></i>
-        <h2 class="card-title">My Story</h2>
+        <h2 class="card-title">About Me</h2>
         <p class="card-desc">Education, skills, and professional journey.</p>
     </a>
 
@@ -190,22 +217,56 @@ layout: default
         <h2 class="card-title">Game Development</h2>
         <p class="card-desc" style="color: rgba(255,255,255,0.8);">Swift Striker, Fracture, and Unity-based interactive experiences.</p>
         <div class="tag-group">
-            <span class="tag">Unity</span>
             <span class="tag">C#</span>
-            <span class="tag">Shaders</span>
+            <span class="tag">C++</span>
+            <span class="tag">Unity</span>
+            <span class="tag">Unreal Engine</span>
         </div>
     </a>
 
     <a href="{{ '/other_projects.html' | relative_url }}" class="project-card study card">
         <i class="fas fa-code icon-box"></i>
-        <h2 class="card-title">Technical Studies</h2>
-        <p class="card-desc" style="color: rgba(255,255,255,0.8);">Ray Tracing, RL, Arduino, and Linear Program Solvers.</p>
+        <h2 class="card-title">Technical Research</h2>
+        <p class="card-desc" style="color: rgba(255,255,255,0.8);">Multimodal RAG, Custom Ray Tracing (C++), and Scalable Backend Architectures.</p>
         <div class="tag-group">
-            <span class="tag">C++</span>
-            <span class="tag">Python</span>
-            <span class="tag">Embedded</span>
+            <span class="tag">Data Analysis</span>
+            <span class="tag">Machine Learning</span>
+            <span class="tag">Diffusion Models</span>
+            <span class="tag">Graphics</span>
+            <span class="tag">Systems</span>
         </div>
     </a>
+
+    <!-- SECTION: SKILLS -->
+    <div class="section-label">Skills & Technologies</div>
+
+    <div class="card" style="grid-column: span 2; min-height: auto;">
+        <h2 class="card-title" style="font-size: 1rem; color: var(--accent); margin-bottom: 15px;">Languages</h2>
+        <div class="tag-group" style="margin-top: 0;">
+            <span class="tag" style="background: rgba(10, 132, 255, 0.1); color: var(--text-primary);">Python</span>
+            <span class="tag" style="background: rgba(10, 132, 255, 0.1); color: var(--text-primary);">C++</span>
+            <span class="tag" style="background: rgba(10, 132, 255, 0.1); color: var(--text-primary);">JavaScript</span>
+            <span class="tag" style="background: rgba(10, 132, 255, 0.1); color: var(--text-primary);">C#</span>
+            <span class="tag" style="background: rgba(10, 132, 255, 0.1); color: var(--text-primary);">SQL</span>
+        </div>
+    </div>
+
+    <div class="card" style="grid-column: span 2; min-height: auto;">
+        <h2 class="card-title" style="font-size: 1rem; color: var(--accent); margin-bottom: 15px;">Frameworks & Tools</h2>
+        <div class="tag-group" style="margin-top: 0;">
+            <span class="tag" style="background: rgba(10, 132, 255, 0.1); color: var(--text-primary);">Node.js</span>
+            <span class="tag" style="background: rgba(10, 132, 255, 0.1); color: var(--text-primary);">PyTorch</span>
+            <span class="tag" style="background: rgba(10, 132, 255, 0.1); color: var(--text-primary);">LlamaIndex</span>
+            <span class="tag" style="background: rgba(10, 132, 255, 0.1); color: var(--text-primary);">Unreal Engine 5</span>
+            <span class="tag" style="background: rgba(10, 132, 255, 0.1); color: var(--text-primary);">Unity</span>
+            <span class="tag" style="background: rgba(10, 132, 255, 0.1); color: var(--text-primary);">MongoDB</span>
+            <span class="tag" style="background: rgba(10, 132, 255, 0.1); color: var(--text-primary);">PySpark</span>
+            <span class="tag" style="background: rgba(10, 132, 255, 0.1); color: var(--text-primary);">scikit-learn</span>
+            <span class="tag" style="background: rgba(10, 132, 255, 0.1); color: var(--text-primary);">Git</span>
+            <span class="tag" style="background: rgba(10, 132, 255, 0.1); color: var(--text-primary);">Linux</span>
+            <span class="tag" style="background: rgba(10, 132, 255, 0.1); color: var(--text-primary);">New Relic</span>
+        </div>
+    </div>
 
     <!-- SECTION: CONNECT -->
     <div class="section-label">Connect</div>
@@ -218,7 +279,7 @@ layout: default
         </div>
     </a>
 
-    <a href="https://github.com/maxroo" target="_blank" class="social-card card" style="color: #333;">
+    <a href="https://github.com/maxroo" target="_blank" class="social-card card" style="color: #fff;">
         <i class="fab fa-github"></i>
     </a>
 
