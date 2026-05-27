@@ -47,21 +47,29 @@
 
   /* Theme Toggle Button */
   .theme-toggle {
-    background: none;
-    border: none;
+    background: rgba(var(--accent-rgb), 0.1);
+    border: 1px solid var(--grid-border);
     color: var(--text-primary);
     cursor: pointer;
-    font-size: 1.2rem;
-    padding: 5px;
+    font-size: 1.1rem;
+    padding: 8px 12px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.3s ease;
+    gap: 8px;
+    transition: all 0.3s ease;
   }
 
   .theme-toggle:hover {
-    transform: rotate(15deg);
-    color: var(--accent);
+    background: rgba(var(--accent-rgb), 0.2);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+
+  .theme-toggle i {
+    width: 1.2rem;
+    text-align: center;
   }
 
   [data-theme="light"] .fa-sun { display: none; }
@@ -72,9 +80,7 @@
 
   /* Adjust navigation on home page to blend with the bento hero */
   .is-home .site-nav {
-    background: transparent;
     border-bottom: none;
-    position: absolute;
     width: 100%;
   }
 </style>
@@ -92,6 +98,7 @@
     <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
       <i class="fas fa-sun"></i>
       <i class="fas fa-moon"></i>
+      <span>Theme</span>
     </button>
   </div>
 </nav>

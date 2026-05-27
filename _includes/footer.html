@@ -11,11 +11,13 @@
 <style>
   .footer {
     width: 100%;
-    padding: 60px 20px;
-    background: white;
-    border-top: 1px solid rgba(0,0,0,0.05);
-    margin-top: 60px;
+    padding: 20px;
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid var(--grid-border);
+    margin-top: 30px;
     text-align: center;
+    transition: background 0.3s, border-color 0.3s;
   }
 
   .footer-content {
@@ -24,19 +26,19 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
   }
 
   .footer p {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--text-secondary);
     margin: 0;
   }
 
   .footer-stats {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: var(--text-secondary);
-    opacity: 0.7;
+    opacity: 0.6;
   }
 </style>
 

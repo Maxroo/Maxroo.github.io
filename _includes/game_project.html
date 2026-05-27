@@ -24,24 +24,26 @@
   }
 
   .project-card-sub {
-    background: white;
+    background: var(--card-bg);
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--grid-border);
+    transition: transform 0.3s, box-shadow 0.3s;
     display: flex;
     flex-direction: column;
   }
 
   .project-card-sub:hover {
     transform: translateY(-5px);
+    box-shadow: var(--card-hover-shadow);
   }
 
   .media-container {
     position: relative;
     width: 100%;
     padding-top: 56.25%; /* 16:9 */
-    background: #f0f0f2;
+    background: var(--bg-color);
   }
 
   .media-container iframe, .media-container img {
