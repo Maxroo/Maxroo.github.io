@@ -1,114 +1,56 @@
-<!doctype html>
-<html>
-    <head>
-      <script src="https://kit.fontawesome.com/a09c14740d.js"></script>
+<style>
+  .site-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
 
-      <style>
-      .links {
-        gap: 20px; /* Adjust spacing between links */
-        margin: 10px 0 0 0; 
-        /* add space between two horizontal links */
-        
-      }
+  .nav-logo {
+    font-weight: 800;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: var(--text-primary, #1d1d1f);
+    letter-spacing: -0.02em;
+  }
 
-      .link:hover {
-        background-color: rgb(0, 0, 0);
-        border-radius: 100px;
-      }
+  .nav-links {
+    display: flex;
+    gap: 30px;
+  }
 
-      .fab{
-        color: rgb(255, 255, 255);
-        padding: 10px 10px;
-        border-radius: 100px;
-        display: inline-flex; /* Use Flexbox for the link */
-        align-items: center; /* Vertically center icon and text */
-        justify-content: center;
-      }
+  .nav-link {
+    text-decoration: none;
+    color: var(--text-secondary, #86868b);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
 
-      .fab:hover{
-        color: rgb(255, 255, 255);
-        background-color: rgb(5, 5, 5)
-      }
+  .nav-link:hover {
+    color: var(--accent, #0071e3);
+    text-decoration: none;
+  }
 
-      /* Dropdown Button */
-      .dropbtn {
-        font-size: 15px;
-        border: none;
-        margin: 10px;
-        color: #FFF;
-        text-decoration: none;
-        margin: 10px;
-      }
+  /* Hide navigation on home page hero if we want the bento to be the main focus */
+  .is-home .site-nav {
+    background: transparent;
+    border-bottom: none;
+  }
+</style>
 
-      /* The container <div> - needed to position the dropdown content */
-      .dropdown {
-        position: relative;
-        display: inline-block;
-      }
-
-      /* Dropdown Content (Hidden by Default) */
-      .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f1f1f1;
-        min-width: 240px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 1;
-        text-decoration: none;
-      }
-
-      /* Links inside the dropdown */
-      .dropdown-content a {
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-        font-size: 13px;
-      }
-
-      /* Change color of dropdown links on hover */
-      .dropdown-content a:hover {background-color: #ddd; text-decoration: none;}
-
-      /* Show the dropdown menu on hover */
-      .dropdown:hover .dropdown-content {display: block;}
-
-      /* Change the background color of the dropdown button when the dropdown content is shown */
-      .dropdown:hover .dropbtn {background-color: #3e8e41;}
-      </style>
-
-    </head>
-  
-<div id="particles-js">
-  <div class="header">
-      <h1>
-        <span class="site-title">{{ site.username }}</span>
-        <span class="site-description">{{ site.user_title }}</span>
-        <span style="font-size:20px;" class="site-description">{{ site.email }}</span>
-        
-      </h1>
-      <div class="header-icons">
-        <a aria-label="My LinkedIn" target="_blank" href="https://www.linkedin.com/in/hao-tsewu/"><i style="padding-right: 8px" class="fab fa-linkedin-in fa-3x"></i></a>
-   
-        <a aria-label="My Github" target="_blank" href="https://github.com/maxroo"><i style="padding-left: 8px" class="fab fa-github fa-3x"></i></a>
-
-      </div>
-
-      <div class="header-links">
-        <a class="link" href="../game_project.html#about" >Game Projects</a>
-          <div class="dropdown">
-            <a class="link" href="../other_projects.html#section3">Study Projects</a>
-            <div class="dropdown-content">
-                <a href="../other_projects.html#Frozen_Lake">Reinforcement Learning</a>
-                <a href="../other_projects.html#Arduino">Arduino Embedded Systems</a>
-                <a href="https://github.com/Maxroo/RAG">Retrieval-Augmented Generation</a>
-                <a href="../other_projects.html#ray_tracer">Ray Tracer</a>
-                <a href="../other_projects.html#lp_solver">Linear Program Solver</a>
-            </div>
-      </div>
-      </div>
-
-
+<nav class="site-nav">
+  <a href="{{ '/' | relative_url }}" class="nav-logo">Hao-Tse Wu</a>
+  <div class="nav-links">
+    <a href="{{ '/game_project.html' | relative_url }}" class="nav-link">Games</a>
+    <a href="{{ '/other_projects.html' | relative_url }}" class="nav-link">Studies</a>
+    <a href="{{ '/aboutMe.html' | relative_url }}" class="nav-link">About</a>
   </div>
-  <!-- <a class="down" href="../aboutMe.html" data-scroll><i class="icon fa fa-chevron-down" aria-hidden="true"></i></a> -->
-</div>
+</nav>
 

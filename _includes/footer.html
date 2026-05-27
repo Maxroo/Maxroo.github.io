@@ -1,19 +1,45 @@
-<footer style="width: 100%; position: absolute; bottom: 0;" class="footer">
-    <!-- <p>&copy; {{ site.username }}</p> -->
-    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <script src="https://kit.fontawesome.com/a09c14740d.js"></script>
-    <div>
-        <p>Hao-Tse Wu</p>
-        <div style="float: left;"  class="powered-by">
-                <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
-                  : <span id="busuanzi_value_site_uv"></span>
-                </span>
-         </div>
+<footer class="footer">
+    <div class="footer-content">
+        <p>&copy; {{ "now" | date: "%Y" }} Hao-Tse Wu</p>
+        <div class="footer-stats">
+            <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <i class="fas fa-eye"></i> <span id="busuanzi_container_site_uv"><span id="busuanzi_value_site_uv"></span> views</span>
+        </div>
     </div>
-    
-        
 </footer>
-<script src="//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+<style>
+  .footer {
+    width: 100%;
+    padding: 60px 20px;
+    background: white;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    margin-top: 60px;
+    text-align: center;
+  }
+
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .footer p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin: 0;
+  }
+
+  .footer-stats {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    opacity: 0.7;
+  }
+</style>
+
 <script src="{{ '/assets/js/sweet-scroll.min.js' | prepend: site.baseurl }}"></script>
 <script src="{{ '/assets/js/main.js' | prepend: site.baseurl }}"></script>
 {% include google-analytics.html %}

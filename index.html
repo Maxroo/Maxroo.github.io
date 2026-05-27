@@ -1,3 +1,229 @@
 ---
 layout: default
 ---
+
+<style>
+    .bento-container {
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 0 20px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+        gap: 20px;
+    }
+
+    .section-label {
+        grid-column: span 4;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--text-secondary);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: -10px;
+        margin-top: 20px;
+        padding-left: 10px;
+    }
+
+    .card {
+        background: var(--card-bg, #ffffff);
+        border-radius: var(--border-radius, 28px);
+        padding: 30px;
+        box-shadow: var(--card-shadow, 0 2px 12px rgba(0,0,0,0.04));
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        position: relative;
+        overflow: hidden;
+        text-decoration: none;
+        color: inherit;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card:hover {
+        transform: translateY(-6px);
+        box-shadow: var(--card-hover-shadow, 0 8px 24px rgba(0,0,0,0.08));
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .hero-card {
+        grid-column: span 3;
+        grid-row: span 2;
+        background: linear-gradient(135deg, #ffffff 0%, #f9f9fb 100%);
+        justify-content: center;
+    }
+
+    .hero-title {
+        font-size: 3.5rem;
+        font-weight: 800;
+        line-height: 1.1;
+        letter-spacing: -0.04em;
+        margin-bottom: 12px;
+        color: var(--text-primary, #1d1d1f);
+    }
+
+    .hero-title span {
+        color: var(--accent, #0071e3);
+    }
+
+    .hero-subtitle {
+        font-size: 1.4rem;
+        color: var(--text-secondary, #86868b);
+        font-weight: 400;
+        margin: 0;
+    }
+
+    .about-card {
+        grid-column: span 1;
+        grid-row: span 2;
+        background: var(--text-primary, #1d1d1f);
+        color: white;
+        justify-content: flex-end;
+    }
+
+    .about-card .card-title { color: white; }
+    .about-card .card-desc { color: rgba(255,255,255,0.7); }
+
+    .project-card {
+        grid-column: span 2;
+        min-height: 220px;
+    }
+
+    .project-card.games {
+        background: #6366f1;
+        color: white;
+    }
+
+    .project-card.study {
+        background: #10b981;
+        color: white;
+    }
+
+    .social-card {
+        grid-column: span 1;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+    }
+
+    .email-card {
+        grid-column: span 2;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .card-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    .card-desc {
+        font-size: 1rem;
+        color: var(--text-secondary, #86868b);
+        line-height: 1.5;
+        margin: 0;
+    }
+
+    .icon-box {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+
+    .tag-group {
+        display: flex;
+        gap: 8px;
+        margin-top: auto;
+        flex-wrap: wrap;
+    }
+
+    .tag {
+        background: rgba(255,255,255,0.2);
+        padding: 5px 12px;
+        border-radius: 100px;
+        font-size: 0.75rem;
+        font-weight: 600;
+    }
+
+    /* Hide the top nav on home page since bento is the hero */
+    .is-home .site-nav {
+        display: none;
+    }
+
+    @media (max-width: 1024px) {
+        .hero-title { font-size: 2.8rem; }
+        .bento-container { grid-template-columns: repeat(2, 1fr); }
+        .hero-card, .section-label { grid-column: span 2; }
+        .about-card { grid-column: span 2; grid-row: span 1; }
+    }
+
+    @media (max-width: 600px) {
+        .bento-container { grid-template-columns: 1fr; }
+        .hero-card, .about-card, .project-card, .social-card, .email-card, .section-label { grid-column: span 1; }
+        .hero-title { font-size: 2.2rem; }
+    }
+</style>
+
+<div class="bento-container">
+    
+    <!-- SECTION: INTRODUCTION -->
+    <div class="hero-card card">
+        <h1 class="hero-title">{{ site.username | replace: " Wu", "" }} <span>Wu</span></h1>
+        <p class="hero-subtitle">{{ site.user_title }} & Graphics Enthusiast</p>
+        <p class="card-desc" style="margin-top: 24px; max-width: 80%;">
+            Specializing in building robust systems, interactive 3D environments, and intelligent agents.
+        </p>
+    </div>
+
+    <a href="{{ '/aboutMe.html' | relative_url }}" class="about-card card">
+        <i class="fas fa-arrow-right icon-box" style="font-size: 1.5rem; margin-bottom: auto; align-self: flex-end;"></i>
+        <h2 class="card-title">My Story</h2>
+        <p class="card-desc">Education, skills, and professional journey.</p>
+    </a>
+
+    <!-- SECTION: WORK -->
+    <div class="section-label">Selected Projects</div>
+
+    <a href="{{ '/game_project.html' | relative_url }}" class="project-card games card">
+        <i class="fas fa-gamepad icon-box"></i>
+        <h2 class="card-title">Game Development</h2>
+        <p class="card-desc" style="color: rgba(255,255,255,0.8);">Swift Striker, Fracture, and Unity-based interactive experiences.</p>
+        <div class="tag-group">
+            <span class="tag">Unity</span>
+            <span class="tag">C#</span>
+            <span class="tag">Shaders</span>
+        </div>
+    </a>
+
+    <a href="{{ '/other_projects.html' | relative_url }}" class="project-card study card">
+        <i class="fas fa-code icon-box"></i>
+        <h2 class="card-title">Technical Studies</h2>
+        <p class="card-desc" style="color: rgba(255,255,255,0.8);">Ray Tracing, RL, Arduino, and Linear Program Solvers.</p>
+        <div class="tag-group">
+            <span class="tag">C++</span>
+            <span class="tag">Python</span>
+            <span class="tag">Embedded</span>
+        </div>
+    </a>
+
+    <!-- SECTION: CONNECT -->
+    <div class="section-label">Connect</div>
+
+    <a href="mailto:{{ site.email }}" class="email-card card">
+        <i class="fas fa-envelope icon-box" style="margin: 0; color: var(--accent);"></i>
+        <div>
+            <h2 class="card-title" style="margin: 0; font-size: 1.2rem;">Get in touch</h2>
+            <p class="card-desc">{{ site.email }}</p>
+        </div>
+    </a>
+
+    <a href="https://github.com/maxroo" target="_blank" class="social-card card" style="color: #333;">
+        <i class="fab fa-github"></i>
+    </a>
+
+    <a href="https://www.linkedin.com/in/hao-tsewu/" target="_blank" class="social-card card" style="color: #0077b5;">
+        <i class="fab fa-linkedin-in"></i>
+    </a>
+
+</div>

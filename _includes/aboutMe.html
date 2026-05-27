@@ -1,188 +1,155 @@
-<body style="background-color:#eaece5"></body>
-<div class="user-details">
-  <div class="user">
-    <h1>Good Day!</h1>
-    <div class="resume">
-      <h2>My Resume: </h2>
-        <div class="block">
-          <a aria-label="Download" target="_blank" href="https://drive.google.com/file/d/1dvrw0dZ3eOkBrUjPKUlOszYp9pZAx891/view?usp=sharing">
-          <i style="padding-left: 5px" class="fas fa-download fa-0.5x"></i></a>
-        </div>
-      </div>
-  </div>
-</div>
-
-</div>
-<div class="user">
-  <div class="tech">
-    <h2>About me</h2>
-    <p style="padding: 0px,60px; text-align: left">I'm Hao-Tse Wu, programmer just walking into this field who is Passionate, hardworking . Always
-      eager to learn and leverage my skills and happy to talk about everything I've done, job opportunities or anything.</p>
-  </div>
-</div>
-
-<div class="user-details">
-  <h2>Work Experiences</h2>
-</div>
-
-<div class="user">
-  <div class="tech">
-    <h2 style="text-align: center">Cinematic Designer</h2>
-    <h3 class="content">I Got Games.INC Canada</h3>
-    <p class="content">Design, and develop Whitebox of in-game user acquisition video content in unity.</p>
-    <p class="content">Create scripts in c# to improve presentability or achieve certain behaviours for the cinematic. </p>
-    <p class="content">Collaborate with artists to implement actual 3d models for the video. </p>
-    <p class="content">Collaborate with programmers to develop tools for the project. 
-    </p>
-  </div>
-</div>
-
-<div class="user-details">
-  <h2>Game-Dev Experiences</h2>
-</div>
-<div class="user">
-  <div class="tech">
-    <h2 style="text-align: left">Swift Striker (c#) VFS </h2>
-    <p class="content" style="font-weight: bold">2D 2v2 Volleyball Game (Unity)</p>
-    <p class="content">Implemented player general moving and hitting abilities</p>
-    <p class="content">Implemented user screen to screen navigation</p>
-    <p class="content">Implemented animations</p>
-    <p class="content">Implemented stage functions and win/ lose condition</p>
-  </div>
-  <div class="tech">
-    <h2 style="text-align: left">Fracture(UE BP) VFS</h2>
-    <p class="content" style="font-weight: bold">3v3 Third Person area brawler (Unreal Engine)</p>
-    <p class="content">Implemented and iterated on all in-game and menu UI</p>
-    <p class="content">Implemented networking (LAN Master Client)</p>
-    <p class="content">Implemented animations</p>
-    <p class="content">Implemented death camera and spectate camera</p>
-    <p class="content">Implemented and iterated on brute Air Leaping, swift dashing, general parrying, taunting and htting abilities</p>
-    <p class="content">Balanced game value.</p>
-  </div>
-  <div class="tech">
-    <h2 style="text-align: left">Pokemon(c#) Personal Project </h2>
-    <p class="content"style="font-weight: bold">Pokemon type of game which player uses programming language as pokemon (Unity)</p>
-    <p class="content">Implemented pokemon battle, wild encouter, switching pokemon in battle, npc battle systems</p>
-    <p class="content">Implemented general player moving and interactive with object abilities</p>
-    <p class="content">Implemented and iterated on all in-game and menu UI</p>
-    <p class="content">Implemented audio, game art and animation</p>
-  </div>
-</div>
-<div class="user">
-  <div class="tech">
-    <h2 style="text-align: left">Weekend Normal(c#) Globel Game Jam </h2>
-    <p class="content"style="font-weight: bold">Visual Novel (Unity)</p>
-    <p class="content">Implemented in-game and menu UI</p>
-    <p class="content">Iterated stats and events systems.</p>
-  </div>
-  <div class="tech">
-    <h2 style="text-align: left">MicroGames(c#)</h2>
-    <p class="content"style="font-weight: bold">Mobile game include 10 micro games(Unity)</p>
-    <p class="content">Implemented 5 micro games’ gameplay each with 3 different levels.</p>
-  </div>
-  <div class="tech">
-      <h2 style="text-align: left">Silver Bullet(Java)</h2>
-      <p class="content"style="font-weight: bold">2-4 player turn base area (JavaFX) </p>
-      <p class="content">Implemented and iterated on in-game and menu UI</p>
-      <p class="content">Implemented pick ups and firing abilities. </p>
-  </div>
-</div>
-
-<div class="user-details">
-  <h2>Hobbies</h2>
-</div>
-<div class="user">
-  <div class="tech">
-    <h2>Video Games</h2>
-    <p>Strategy games | Dota2 | APEX </p>
-  </div>
-  <div class="tech">
-    <h2>Games Development</h2>
-  </div>
-  <div class="tech">
-    <h2>Sports</h2>
-    <p>Football(Soccer) | Ultimate Frisbee </p>
-  </div>
-</div>
-
-
 <style>
-  * {
-    box-sizing: border-box;
+  .about-section {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
   }
 
-  .photo {
-    position: relative;
-    padding-bottom: 56.25%;
-    /* 16:9 */
-    padding-top: 25px;
-    padding-left: 10px;
-    padding-right: 10px;
-    height: 0;
+  .about-hero {
+    background: white;
+    padding: 40px;
+    border-radius: 28px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    margin-bottom: 40px;
   }
 
-  .photo img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  .about-hero h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: -0.04em;
   }
 
-  .videoWrapper {
-    position: relative;
-    padding-bottom: 56.25%;
-    /* 16:9 */
-    padding-top: 25px;
-    padding-left: 10px;
-    padding-right: 10px;
-    height: 0;
+  .experience-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
-  .videoWrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  .exp-card {
+    background: white;
+    padding: 30px;
+    border-radius: 24px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    border-left: 5px solid var(--accent);
   }
 
-  a:link {
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+  }
+
+  .exp-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+
+  .exp-company {
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .exp-content p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 8px;
+    font-weight: 400;
+  }
+
+  .section-label-sub {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 40px 0 20px 0;
+    color: var(--text-primary);
+  }
+
+  .resume-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--text-primary);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 100px;
     text-decoration: none;
-    text-emphasis-color: black;
-    text-decoration-color: black;
-    color: black;
+    font-weight: 600;
+    transition: background 0.2s;
   }
 
-  a:visited {
+  .resume-btn:hover {
+    background: var(--accent);
+    color: white;
     text-decoration: none;
-    color: black;
-    text-emphasis-color: black;
-    text-decoration-color: black;
   }
-
-  a:hover {
-    text-decoration: underline;
-    text-emphasis-color: black;
-    text-decoration-color: black;
-    color: black;
-  }
-
-  a:active {
-    text-decoration: none;
-    text-emphasis-color: black;
-    text-decoration-color: black;
-    color: rgb(0, 0, 0);
-  }
-
-  p.title {
-    
-    text-align: left
-  } 
-  
-  p.content {
-    text-align: left
-    
-  }
-
 </style>
+
+<div class="about-section">
+  <div class="about-hero">
+    <h1>Good Day! I'm Hao-Tse.</h1>
+    <p style="font-size: 1.1rem; line-height: 1.6; color: var(--text-secondary); margin-bottom: 20px;">
+      I'm a passionate Software Engineer focused on building robust systems and immersive 3D experiences. 
+      Eager to learn and always looking for new challenges in graphics, games, and systems programming.
+    </p>
+    <a href="https://drive.google.com/file/d/1dvrw0dZ3eOkBrUjPKUlOszYp9pZAx891/view?usp=sharing" target="_blank" class="resume-btn">
+      <i class="fas fa-download"></i> Download Resume
+    </a>
+  </div>
+
+  <h2 class="section-label-sub">Professional Experience</h2>
+  <div class="experience-grid">
+    <div class="exp-card">
+      <div class="exp-header">
+        <div class="exp-title">Cinematic Designer</div>
+      </div>
+      <div class="exp-company">I Got Games (IGG) Canada</div>
+      <div class="exp-content">
+        <p>• Design and develop whitebox in-game user acquisition content in Unity.</p>
+        <p>• Create C# scripts to improve cinematic presentation and behaviors.</p>
+        <p>• Collaborate with artists and programmers to implement 3D models and develop internal tools.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-label-sub">Game Development Highlights</h2>
+  <div class="experience-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+    <div class="exp-card" style="border-left-color: #6366f1;">
+      <div class="exp-title">Swift Striker (C#)</div>
+      <div class="exp-company">VFS Project | Unity</div>
+      <div class="exp-content">
+        <p>Implemented core player movement, hitting mechanics, and screen-to-screen navigation.</p>
+      </div>
+    </div>
+    <div class="exp-card" style="border-left-color: #f59e0b;">
+      <div class="exp-title">Fracture (C++/BP)</div>
+      <div class="exp-company">VFS Project | Unreal Engine</div>
+      <div class="exp-content">
+        <p>Developed networked UI, LAN master client logic, and complex character abilities (leaping, dashing).</p>
+      </div>
+    </div>
+    <div class="exp-card" style="border-left-color: #10b981;">
+      <div class="exp-title">Personal Project: Pokemon</div>
+      <div class="exp-company">Unity</div>
+      <div class="exp-content">
+        <p>Built a full RPG battle system including wild encounters, NPC logic, and interactive world objects.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-label-sub">Hobbies & Interests</h2>
+  <div class="experience-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+    <div class="exp-card" style="padding: 20px; border-left: none; background: #f9f9fb; text-align: center;">
+      <i class="fas fa-gamepad" style="font-size: 1.5rem; margin-bottom: 10px; color: var(--accent);"></i>
+      <div class="exp-title" style="font-size: 1.1rem;">Strategy & FPS</div>
+      <p style="font-size: 0.85rem;">Dota 2 | APEX</p>
+    </div>
+    <div class="exp-card" style="padding: 20px; border-left: none; background: #f9f9fb; text-align: center;">
+      <i class="fas fa-futbol" style="font-size: 1.5rem; margin-bottom: 10px; color: var(--accent);"></i>
+      <div class="exp-title" style="font-size: 1.1rem;">Sports</div>
+      <p style="font-size: 0.85rem;">Soccer | Ultimate Frisbee</p>
+    </div>
+  </div>
+</div>

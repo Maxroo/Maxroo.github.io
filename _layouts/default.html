@@ -1,15 +1,23 @@
 <!DOCTYPE html>
-
 <html lang="en">
   {% include head.html %}
-  <body>
+  <body class="{% if page.url == '/' %}is-home{% endif %}">
       {% include header.html %}
+      
+      <main>
+        {{ content }}
+      </main>
+
       {% include footer.html %}
+
+      <style>
+        footer {
+          opacity: 0.5;
+          padding: 40px 0;
+          text-align: center;
+          font-size: 0.8rem;
+          color: var(--text-secondary);
+        }
+      </style>
   </body>
 </html>
-
-<style>
-  footer {
-    opacity: 0;
-  }
-</style>

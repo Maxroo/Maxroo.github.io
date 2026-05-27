@@ -1,198 +1,176 @@
-<body style="background-color:#eaece5"></body>
 <style>
-  .fas{
-    color: rgb(0, 0, 0)
+  .project-section {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
   }
 
-  .fas:hover{
-    background-color: rgb(44, 44, 44)
-  }
-  </style>
-
-<div class="user-details">
-  <h1>Team Projects</h1>
-  <p>(Click title for more details)</p>
-</div>
-<div class="user">
-
-  <div class="tech">
-    <h2><a href="../swift_striker.html">Swift Striker (C#)</a></h2>
-    <div class="videoWrapper">
-      <iframe width="420" height="315" src="https://www.youtube.com/embed/wY7w1Y49CyE" frameborder="0"
-        allow="accelerometer;  encrypted-media; gyroscope; " allowfullscreen></iframe>
-    </div> 
-    <p>2 v 2 volleyball game made in unity.</p>
-  </div>
-
-  <div class="tech">
-    <h2><a href="../fracture.html">Fracture (Unreal BP & C++)</a></h2>
-    <div class="videoWrapper">
-      <iframe width="420" height="315" src="https://www.youtube.com/embed/0b1LrsRwtZo" frameborder="0"
-        allow="accelerometer;  encrypted-media; gyroscope; " allowfullscreen></iframe>
-    </div>
-    <p>3 v 3 arena brawler where player pick one of the monster knock other player out of the stage.</p>
-  </div>
-  <div class="tech">
-    <h2><a href="https://github.com/Maxroo/silver-Bullet">Silver Bullet (JavaFX)</a></h2>
-    <div class="videoWrapper">
-      <iframe width="420" height="315" src="https://www.youtube.com/embed/phqKn5ezRSc" frameborder="0"
-        allow="accelerometer;  encrypted-media; gyroscope; " allowfullscreen></iframe>
-    </div>
-    <p>Up to 1 ~ 4 players, turn based arena battle.</p>
-  </div>
-</div>
-<div class="user">
-  <div class="tech">
-    <h2><a href="https://globalgamejam.org/2019/games/weekend-normal">Weekend Normal (C#)</a></h2>
-    <div class="photo">
-      <a href="https://globalgamejam.org/2019/games/weekend-normal"><img src="../weekendNormal.png"
-          alt="Flowers in Chania" width="420" height="315"></a>
-    </div>
-    <p>Global Game Jam Project. Player play a member of the family by triggering different events and going to different room to gain status. Depending on player's status, different ending will be played.</p>
-  </div>
-  <div class="tech">
-    <h2><a href="https://github.com/Maxroo/MicroGames">MicroGames (C#)</a></h2>
-    <div class="videoWrapper">
-      <iframe width="420" height="315" src="https://www.youtube.com/embed/Rqwzg59V5Y8" frameborder="0"
-        allow="accelerometer; encrypted-media; gyroscope; " allowfullscreen></iframe>
-    </div>
-    <p>Android mobile game include 10 micro games each with 3 different difficulties.</p>
-  </div>
-  <div class="tech">
-      <h2><a href="https://twitter.com/SicknessGame">Branching Sickness (C++)</a></h2>
-      <div class="photo">
-        <a href="https://twitter.com/SicknessGame"><img src="../BranchingSickness.PNG" width="420" height="315" ></a>
-      </div>
-    <p class="content">a flood horror Halo fan game that is slowly under development in Unreal Engine 5, check out more on the website!</p>
-    <p class="content" style="text-align: left">Helped converte plugin from Unreal 4 to Unreal 5</p>
-  </div>
-</div>
-
-<div class="user-details">
-    <h1>Personal Prototype Projects</h1>
-  </div>
-      <div class="user">
-          <div class="tech">
-              <h2>Fake Pokemon (C#)</h2>
-              <div class="videoWrapper">
-                  <iframe width="420" height="315" src="https://www.youtube.com/embed/vudEGhbArLQ" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; " allowfullscreen></iframe>
-              </div>
-              <p>A pokemon game prototype, Player uses programming languages as your pokemon.</p>
-            </div>
-          <div class="tech">
-            <h2><a href="../DogeBallThing.html">Dodgeball (C#)</a></h2>
-            <div class="photo">
-              <a href="../DogeBallThing.html"><img src="../DogeBallThing.PNG"
-                alt="Flowers in Chania" width="420" height="315"></a>
-            </div>
-            <p>A Dodgeball Game Prototype </p>
-          </div>
-            <div class="tech">
-                <h2></h2>
-                <div class="videoWrapper">
-                </div>
-                <p></p>
-              </div>
-        </div>
-
-<a class="fixed-button" href="../other_projects.html#section3"><i class="icon fa fa-chevron-right" aria-hidden="true"></i></a>
-
-
-<style>
-  * {
-    box-sizing: border-box;
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
   }
 
-  .photo {
+  .section-title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 30px;
+    letter-spacing: -0.03em;
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--accent);
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+
+  .project-card-sub {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-card-sub:hover {
+    transform: translateY(-5px);
+  }
+
+  .media-container {
     position: relative;
-    padding-bottom: 56.25%;
-    /* 16:9 */
-    padding-top: 25px;
-    padding-left: 10px;
-    padding-right: 10px;
-    height: 0;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 */
+    background: #f0f0f2;
   }
 
-  .photo img {
+  .media-container iframe, .media-container img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    border: none;
   }
 
-  .videoWrapper {
-    position: relative;
-    padding-bottom: 56.25%;
-    /* 16:9 */
-    padding-top: 25px;
-    padding-left: 10px;
-    padding-right: 10px;
-    height: 0;
+  .project-info {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
   }
 
-  .videoWrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  .project-info h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 10px;
   }
 
-   a[disabled="disabled"] {
-        pointer-events: none;
-    }
+  .project-info h2 a {
+    color: var(--text-primary);
+    text-decoration: none;
+  }
 
-    a:link {
-      text-decoration: none;
-      text-emphasis-color: black;
-      text-decoration-color: black;
-      color: rgb(0, 0, 0);
-    }
+  .project-info h2 a:hover {
+    color: var(--accent);
+  }
 
-    a:visited {
-      text-decoration: none;
-      color: black;
-      text-emphasis-color: black;
-      text-decoration-color: black;
-    }
-
-    a:hover {
-      text-emphasis-color: black;
-      text-decoration-color: black;
-      color: rgb(0, 162, 255);
-    }
-
-    a:active {
-      text-decoration: none;
-      text-emphasis-color: black;
-      text-decoration-color: black;
-      color: rgb(0, 0, 0);
-    }
-
-    p{
-      font-size: medium;
-      font-weight: bold;
-    }
-
-    .fixed-button {
-      position: fixed;   /* Keep the button fixed on the screen */
-      right: 20px;        /* Position it 20px from the left side of the screen */
-      top: 50%;          /* Position it in the middle vertically */
-      transform: translateY(-50%); /* Adjust for perfect vertical centering */
-      padding: 10px 20px;
-      background-color: #ffffff; /* Blue background */
-      color: rgb(0, 0, 0);
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
-      z-index: 1000; /* Ensure it's above other content */
-    }
-    
-    .fixed-button:hover {
-      background-color: #7e7e7e; /* Darker blue when hovered */
-    }
+  .project-info p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    font-weight: 400;
+  }
 </style>
+
+<div class="project-section">
+  <h1 class="section-title">Team Projects</h1>
+  <div class="project-grid">
+
+    <div class="project-card-sub">
+      <div class="media-container">
+        <iframe src="https://www.youtube.com/embed/wY7w1Y49CyE" allowfullscreen></iframe>
+      </div>
+      <div class="project-info">
+        <h2><a href="{{ '/swift_striker.html' | relative_url }}">Swift Striker (C#)</a></h2>
+        <p>2 v 2 volleyball game made in Unity.</p>
+      </div>
+    </div>
+
+    <div class="project-card-sub">
+      <div class="media-container">
+        <iframe src="https://www.youtube.com/embed/0b1LrsRwtZo" allowfullscreen></iframe>
+      </div>
+      <div class="project-info">
+        <h2><a href="{{ '/fracture.html' | relative_url }}">Fracture (Unreal BP & C++)</a></h2>
+        <p>3 v 3 arena brawler where players pick monsters to knock opponents out of the stage.</p>
+      </div>
+    </div>
+
+    <div class="project-card-sub">
+      <div class="media-container">
+        <iframe src="https://www.youtube.com/embed/phqKn5ezRSc" allowfullscreen></iframe>
+      </div>
+      <div class="project-info">
+        <h2><a href="https://github.com/Maxroo/silver-Bullet">Silver Bullet (JavaFX)</a></h2>
+        <p>1 ~ 4 player turn-based arena battle.</p>
+      </div>
+    </div>
+
+    <div class="project-card-sub">
+      <div class="media-container">
+        <img src="{{ '/weekendNormal.png' | relative_url }}" alt="Weekend Normal">
+      </div>
+      <div class="project-info">
+        <h2><a href="https://globalgamejam.org/2019/games/weekend-normal">Weekend Normal (C#)</a></h2>
+        <p>Global Game Jam Project. A narrative-driven family simulator with multiple endings.</p>
+      </div>
+    </div>
+
+    <div class="project-card-sub">
+      <div class="media-container">
+        <iframe src="https://www.youtube.com/embed/Rqwzg59V5Y8" allowfullscreen></iframe>
+      </div>
+      <div class="project-info">
+        <h2><a href="https://github.com/Maxroo/MicroGames">MicroGames (C#)</a></h2>
+        <p>Mobile collection of 10 micro games with varying difficulties.</p>
+      </div>
+    </div>
+
+    <div class="project-card-sub">
+      <div class="media-container">
+        <img src="{{ '/BranchingSickness.PNG' | relative_url }}" alt="Branching Sickness">
+      </div>
+      <div class="project-info">
+        <h2><a href="https://twitter.com/SicknessGame">Branching Sickness (C++)</a></h2>
+        <p>A flood horror Halo fan game in Unreal Engine 5. Helped convert plugins from UE4 to UE5.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <h1 class="section-title" style="margin-top: 60px;">Personal Prototypes</h1>
+  <div class="project-grid">
+    <div class="project-card-sub">
+      <div class="media-container">
+        <iframe src="https://www.youtube.com/embed/vudEGhbArLQ" allowfullscreen></iframe>
+      </div>
+      <div class="project-info">
+        <h2>Fake Pokemon (C#)</h2>
+        <p>A pokemon-style prototype where programming languages are used as the "creatures".</p>
+      </div>
+    </div>
+
+    <div class="project-card-sub">
+      <div class="media-container">
+        <img src="{{ '/DogeBallThing.PNG' | relative_url }}" alt="Dodgeball">
+      </div>
+      <div class="project-info">
+        <h2><a href="{{ '/DogeBallThing.html' | relative_url }}">Dodgeball (C#)</a></h2>
+        <p>A fast-paced Dodgeball game prototype.</p>
+      </div>
+    </div>
+  </div>
+</div>
 
 

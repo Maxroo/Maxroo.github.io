@@ -1,234 +1,164 @@
-<body style="background-color:#eaece5"></body>
 <style>
-  .fas{
-    color: rgb(0, 0, 0)
+  .project-section {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
   }
 
-  .fas:hover{
-    background-color: rgb(44, 44, 44)
-  }
-  </style>
-
-<div id="section3" class="user-details">
-  <h1>Study Projects</h1>
-
-<div id="Frozen_Lake" class="user">
-  <div class="tech">
-  <h2>Reinforcement learning for mini game fronzen lake</a></h2>
-  <div class="tech">
-    <h3>Github </h3>
-  <a aria-label="My Github" target="_blank" href="https://github.com/Maxroo/Reinforcement_Learning_Frozen_Lake"><i style="padding-left: 5px;" class="fab fa-github"></i></a>
-</div>
-</div>
-</div>
-<div class="user">
-  <div class="tech">
-    <h3 style="text-align: left">Before training</h3>
-    <div class="photo">
-      <a><img src="../rl_frozen/before.gif" width="420" height="315"></a>
-    </div>
-  </div>
-  <div class="tech">
-    <h3 style="text-align: left">After training</h3>
-    <div class="photo">
-      <a><img src="../rl_frozen/after.gif" width="420" height="315" ></a>
-    </div>
-  </div>
-</div>
-
-<hr>
-
-
-
-<div id="Arduino" class="user">
-  <div class="tech">
-  <h2>Arduino LED systems</a></h2>
-</div>
-</div>
-<div class="user">
-  <div class="tech">
-    <h3>Simulation</h3>
-    <div style="padding-bottom: 43%;" class="photo">
-      <a><img src="../arduino/arduino.gif" width="840"></a>
-    </div>
-  </div>
-  </div>
-
-<hr>
-
-
-<div id="RAG" class="user">
-  <div class="tech">
-  <h2>Retrieval-Augmented Generation for complex claims (no previews)</a></h2>
-  <div class="tech">
-    <h3>Github</h3>
-  <a aria-label="My Github" target="_blank" href="https://github.com/Maxroo/RAG"><i style="padding-left: 5px;" class="fab fa-github"></i></a>
-</div>
-</div>
-</div>
-
-<hr>
-
-
-<div id="ray_tracer" class="user">
-  <div class="tech">
-  <h2>RayTracer</a></h2>
-  <div class="tech">
-    <h3>Github (python ver.)</h3>
-  <a aria-label="My Github" target="_blank" href="https://github.com/Maxroo/RayTracer"><i style="padding-left: 5px;" class="fab fa-github"></i></a>
-</div>
-</div>
-</div>
-<div class="user">
-  <div class="tech">
-    <h3 style="text-align: left">Sample Scene File Input</h3>
-    <div class="photo">
-      <a><img src="../RayTracer/input.PNG" width="420" height="315"></a>
-    </div>
-  </div>
-  <div class="tech">
-    <h3 style="text-align: left">Sample Output</h3>
-    <div class="photo">
-      <a><img src="../RayTracer/output.PNG" width="315" height="315" ></a>
-    </div>
-  </div>
-</div>
-
-<hr>
-
-<div id="lp_solver" class="user">
-    <div class="tech">
-    <h2>Linear Program Solver</a></h2>
-    <div class="tech">
-      <h3>Github</h3>
-    <a aria-label="My Github" target="_blank" href="https://github.com/Maxroo/lp_solver"><i style="padding-left: 5px;" class="fab fa-github"></i></a>
-  </div>
-</div>
-</div>
-<div class="user">
-  <div class="tech">
-    <h3 style="text-align: left">Sample Input</h3>
-    <div class="photo">
-      <a><img src="../lp_solver/input.PNG" width="420" height="315"></a>
-    </div>
-  </div>
-  <div class="tech">
-    <h3 style="text-align: left">Sample Output</h3>
-    <div class="photo">
-      <a><img src="../lp_solver/output.PNG" width="420" height="315"></a>
-    </div>
-  </div>
-</div>
-<p style="text-align: center">This solver used Algebraic method to solve the LP, outputs if the linear program is feasible, unbounded or infeasible. If it is feasible it also will return the optimal solution.</p>
-</div>
-
-<a class="fixed-button" href="../game_project.html#about" ><i class="icon fa fa-chevron-left" aria-hidden="true"></i></a>
-
-<style>
-  * {
-    box-sizing: border-box;
-  }
-  
-  .photo {
-    padding-bottom: 100%;
-    /* 16:9 */
-    padding-top: 25px;
-    padding-left: 10px;
-    padding-right: 10px;
-    height: 0;
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
   }
 
-  .photo img {
-    display: block;
+  .section-title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 30px;
+    letter-spacing: -0.03em;
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--accent);
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+
+  .project-card-sub {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-card-sub:hover {
+    transform: translateY(-5px);
+  }
+
+  .media-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    background: #f0f0f2;
+  }
+
+  .media-item {
     position: relative;
-    top: 0;
-    left: 0;
+    padding-top: 75%;
     width: 100%;
-    height: auto;
   }
 
-  .videoWrapper {
-    position: relative;
-    padding-bottom: 56.25%;
-    /* 16:9 */
-    padding-top: 25px;
-    padding-left: 10px;
-    padding-right: 10px;
-    height: 0;
-  }
-
-  .videoWrapper iframe {
+  .media-item img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    object-fit: contain;
+    background: #fff;
   }
 
-  #section3 .fab{
-    color: rgb(0, 0, 0)
+  .project-info {
+    padding: 20px;
+    flex-grow: 1;
   }
 
-  #section3 .fab:hover{
-    color: rgb(255, 255, 255);
-    background-color: rgb(0, 0, 0);
+  .project-info h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
-   a[disabled="disabled"] {
-        pointer-events: none;
-    }
+  .github-link {
+    font-size: 1.2rem;
+    color: var(--text-primary);
+  }
 
-    a:link {
-      text-decoration: none;
-      text-emphasis-color: black;
-      text-decoration-color: black;
-      color: black;
-    }
+  .github-link:hover {
+    color: var(--accent);
+  }
 
-    a:visited {
-      text-decoration: none;
-      color: black;
-      text-emphasis-color: black;
-      text-decoration-color: black;
-    }
-
-    a:hover {
-      text-decoration: underline;
-      text-emphasis-color: black;
-      text-decoration-color: black;
-      color: rgb(0, 145, 255);
-    }
-
-    a:active {
-      text-decoration: none;
-      text-emphasis-color: black;
-      text-decoration-color: black;
-      color: rgb(0, 0, 0);
-    }
-
-    p{
-      font-size: medium;
-      font-weight: bold;
-    }
-
-    .fixed-button {
-      position: fixed;   /* Keep the button fixed on the screen */
-      left: 20px;        /* Position it 20px from the left side of the screen */
-      top: 50%;          /* Position it in the middle vertically */
-      transform: translateY(-50%); /* Adjust for perfect vertical centering */
-      padding: 10px 20px;
-      background-color: #ffffff; /* Blue background */
-      color: rgb(0, 0, 0);
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
-      z-index: 1000; /* Ensure it's above other content */
-    }
-    
-    .fixed-button:hover {
-      background-color: #a3a3a3; /* Darker blue when hovered */
-    }
+  .project-info p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    font-weight: 400;
+  }
 </style>
 
+<div class="project-section" id="section3">
+  <h1 class="section-title">Study Projects</h1>
+  <div class="project-grid">
 
+    <!-- Frozen Lake -->
+    <div class="project-card-sub" id="Frozen_Lake">
+      <div class="media-grid">
+        <div class="media-item"><img src="{{ '/rl_frozen/before.gif' | relative_url }}" alt="Before Training"></div>
+        <div class="media-item"><img src="{{ '/rl_frozen/after.gif' | relative_url }}" alt="After Training"></div>
+      </div>
+      <div class="project-info">
+        <h2>
+          Reinforcement Learning: Frozen Lake
+          <a href="https://github.com/Maxroo/Reinforcement_Learning_Frozen_Lake" target="_blank" class="github-link"><i class="fab fa-github"></i></a>
+        </h2>
+        <p>Training an agent to navigate a slippery frozen lake using Q-Learning.</p>
+      </div>
+    </div>
+
+    <!-- Arduino -->
+    <div class="project-card-sub" id="Arduino">
+      <div class="media-item" style="padding-top: 50%;"><img src="{{ '/arduino/arduino.gif' | relative_url }}" alt="Arduino Simulation"></div>
+      <div class="project-info">
+        <h2>Arduino LED Systems</h2>
+        <p>Embedded systems design and simulation for interactive LED arrays.</p>
+      </div>
+    </div>
+
+    <!-- RAG -->
+    <div class="project-card-sub" id="RAG">
+      <div class="project-info" style="min-height: 200px; display: flex; flex-direction: column; justify-content: center;">
+        <h2>
+          RAG for Complex Claims
+          <a href="https://github.com/Maxroo/RAG" target="_blank" class="github-link"><i class="fab fa-github"></i></a>
+        </h2>
+        <p>Retrieval-Augmented Generation system designed to verify and process complex informational claims.</p>
+      </div>
+    </div>
+
+    <!-- Ray Tracer -->
+    <div class="project-card-sub" id="ray_tracer">
+      <div class="media-grid">
+        <div class="media-item"><img src="{{ '/RayTracer/input.PNG' | relative_url }}" alt="Input"></div>
+        <div class="media-item"><img src="{{ '/RayTracer/output.PNG' | relative_url }}" alt="Output"></div>
+      </div>
+      <div class="project-info">
+        <h2>
+          Ray Tracer
+          <a href="https://github.com/Maxroo/RayTracer" target="_blank" class="github-link"><i class="fab fa-github"></i></a>
+        </h2>
+        <p>A custom graphics engine built from scratch to simulate light transport and photorealistic effects.</p>
+      </div>
+    </div>
+
+    <!-- LP Solver -->
+    <div class="project-card-sub" id="lp_solver">
+      <div class="media-grid">
+        <div class="media-item"><img src="{{ '/lp_solver/input.PNG' | relative_url }}" alt="Input"></div>
+        <div class="media-item"><img src="{{ '/lp_solver/output.PNG' | relative_url }}" alt="Output"></div>
+      </div>
+      <div class="project-info">
+        <h2>
+          Linear Program Solver
+          <a href="https://github.com/Maxroo/lp_solver" target="_blank" class="github-link"><i class="fab fa-github"></i></a>
+        </h2>
+        <p>An algebraic solver that determines feasibility, boundedness, and optimal solutions for linear programs.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
