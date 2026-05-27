@@ -3,31 +3,6 @@ layout: default
 ---
 
 <style>
-    /* Default Dark Mode Variables */
-    :root {
-        --bg-color: #000000;
-        --card-bg: #1c1c1e;
-        --text-primary: #ffffff;
-        --text-secondary: #a1a1a6;
-        --accent: #0a84ff;
-        --card-shadow: 0 4px 16px rgba(0,0,0,0.4);
-        --card-hover-shadow: 0 8px 32px rgba(0,0,0,0.6);
-        --border-radius: 28px;
-        --hero-gradient: linear-gradient(135deg, #1c1c1e 0%, #2c2c2e 100%);
-    }
-
-    /* Light Mode Variables override */
-    [data-theme="light"] {
-        --bg-color: #f2f2f7;
-        --card-bg: #ffffff;
-        --text-primary: #1d1d1f;
-        --text-secondary: #86868b;
-        --accent: #0071e3;
-        --card-shadow: 0 2px 12px rgba(0,0,0,0.04);
-        --card-hover-shadow: 0 8px 24px rgba(0,0,0,0.08);
-        --hero-gradient: linear-gradient(135deg, #ffffff 0%, #f9f9fb 100%);
-    }
-
     .bento-container {
         max-width: 1200px;
         margin: 40px auto;
@@ -52,6 +27,7 @@ layout: default
 
     .card {
         background: var(--card-bg);
+        border: 1px solid var(--grid-border);
         border-radius: var(--border-radius);
         padding: 30px;
         box-shadow: var(--card-shadow);
@@ -170,11 +146,6 @@ layout: default
         font-size: 0.75rem;
         font-weight: 600;
         color: #fff;
-    }
-
-    /* Hide the top nav on home page since bento is the hero */
-    .is-home .site-nav {
-        display: none;
     }
 
     @media (max-width: 1024px) {
