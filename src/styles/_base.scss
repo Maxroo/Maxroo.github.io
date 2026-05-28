@@ -2,8 +2,13 @@
 @import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great|Josefin+Slab|Antic+Slab');
 
 * {
+    box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+*:before, *:after {
+    box-sizing: border-box;
 }
 
 body {

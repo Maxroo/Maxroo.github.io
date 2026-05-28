@@ -100,20 +100,6 @@ layout: default
         color: white;
     }
 
-    .social-card {
-        grid-column: span 1;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.5rem;
-    }
-
-    .email-card {
-        grid-column: span 2;
-        flex-direction: row;
-        align-items: center;
-        gap: 20px;
-    }
-
     .card-title {
         font-size: 1.5rem;
         font-weight: 700;
@@ -257,24 +243,5 @@ layout: default
             <span class="tag" style="background: rgba(10, 132, 255, 0.1); color: var(--text-primary);">New Relic</span>
         </div>
     </div>
-
-    <!-- SECTION: CONNECT -->
-    <div class="section-label">Connect</div>
-
-    <a href="mailto:{{ site.email }}" class="email-card card">
-        <i class="fas fa-envelope icon-box" style="margin: 0; color: var(--accent);"></i>
-        <div>
-            <h2 class="card-title" style="margin: 0; font-size: 1.2rem;">Get in touch</h2>
-            <p class="card-desc">{{ site.email }}</p>
-        </div>
-    </a>
-
-    <a href="https://github.com/maxroo" target="_blank" class="social-card card" style="color: #fff;">
-        <i class="fab fa-github"></i>
-    </a>
-
-    <a href="https://www.linkedin.com/in/hao-tsewu/" target="_blank" class="social-card card" style="color: #0077b5;">
-        <i class="fab fa-linkedin-in"></i>
-    </a>
 
 </div>

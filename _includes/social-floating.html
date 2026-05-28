@@ -1,0 +1,97 @@
+<div class="social-floating">
+  <a href="mailto:{{ site.email }}" class="social-btn email" aria-label="Email">
+    <i class="fas fa-envelope"></i>
+  </a>
+  <a href="https://github.com/maxroo" target="_blank" class="social-btn github" aria-label="GitHub">
+    <i class="fab fa-github"></i>
+  </a>
+  <a href="https://www.linkedin.com/in/hao-tsewu/" target="_blank" class="social-btn linkedin" aria-label="LinkedIn">
+    <i class="fab fa-linkedin-in"></i>
+  </a>
+</div>
+
+<style>
+  .social-floating {
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 2000;
+  }
+
+  .social-btn {
+    width: 48px;
+    height: 48px;
+    background: var(--card-bg);
+    border: 1px solid var(--grid-border);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+    text-decoration: none;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    backdrop-filter: blur(10px);
+    position: relative;
+  }
+
+  .social-btn i {
+    font-size: 1.4rem;
+  }
+
+  .social-btn:hover {
+    transform: translateX(5px) scale(1.1);
+    box-shadow: var(--card-hover-shadow);
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .social-btn.email:hover { background: #ea4335; border-color: #ea4335; }
+  .social-btn.github:hover { background: #333; border-color: #444; }
+  .social-btn.linkedin:hover { background: #0077b5; border-color: #0077b5; }
+
+  /* Tooltip effect */
+  .social-btn::after {
+    content: attr(aria-label);
+    position: absolute;
+    left: 60px;
+    background: var(--card-bg);
+    color: var(--text-primary);
+    padding: 5px 12px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    border: 1px solid var(--grid-border);
+    box-shadow: var(--card-shadow);
+  }
+
+  .social-btn:hover::after {
+    opacity: 1;
+    left: 55px;
+  }
+
+  @media (max-width: 768px) {
+    .social-floating {
+      left: 15px;
+      gap: 10px;
+    }
+    .social-btn {
+      width: 40px;
+      height: 40px;
+    }
+    .social-btn i {
+      font-size: 1.1rem;
+    }
+    .social-btn::after {
+      display: none;
+    }
+  }
+</style>
